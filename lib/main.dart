@@ -1,54 +1,61 @@
+// main.dart
 import 'package:flutter/material.dart';
+import 'package:myapp/body.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Lab06AdvancedUI());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+/*
+  NAVIGATION
+  1. Drawer
+  2. Bottom Nav
+  3. Tab
+*/
+
+class Lab06AdvancedUI extends StatelessWidget {
+  const Lab06AdvancedUI({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Lab06 Advanced UI',
       home: Scaffold(
         drawer: Drawer(
-          backgroundColor: Colors.lightGreenAccent,
+          backgroundColor: const Color.fromARGB(255, 242, 245, 247),
           child: ListView(
             children: [
-              DrawerHeader(
-                child: Row(
-                  children: [Icon(Icons.people_alt_rounded), Text("Contacts")],
+              Container(
+                height: 80,
+                child: DrawerHeader(
+                  child: Row(
+                    children: [
+                      Icon(Icons.people_alt_rounded),
+                      Text("Contacts"),
+                    ],
+                  ),
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.phone),
-                title: Text("CAll Obama"),
-                trailing: Text("1"),
+                leading: Icon(Icons.mobile_screen_share),
+                title: Text("Device"),
+                trailing: Text("Anything"),
+                onTap: () {},
               ),
               ListTile(
-                leading: Icon(Icons.phone),
-                title: Text("CAll Hasina"),
-                trailing: Text("12"),
+                leading: Icon(Icons.mobile_screen_share),
+                title: Text("Contacts"),
+                trailing: Text("Anything"),
                 onTap: () {},
               ),
             ],
           ),
         ),
         appBar: AppBar(
-          title: const Text('AdvanceUI'),
-          backgroundColor: Colors.teal,
+          title: const Text('Lab06 Advanced UI'),
+          backgroundColor: Colors.amber,
         ),
-        body: Center(child: Text('Tanvir')),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-            ),
-          ],
-        ),
+        body: AppBody(),
       ),
     );
   }
