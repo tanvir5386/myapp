@@ -19,12 +19,13 @@ class Lab06AdvancedUI extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CachedNetworkImage(
-                imageUrl: 'https://incubator.ucf.edu/wp-content/uploads/2023/07/artificial.jpg',
-                placeholder: (context, url) => const CircularProgressIndicator(),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
+                imageUrl:
+                    'https://aaregistry.org/wp-content/uploads/2009/09/pele.jpg',
+                placeholder: (context, url) => CircularProgressIndicator(),
+                errorWidget: (context, url, error) => Icon(Icons.error),
               ), // Cached Network Image
               const SizedBox(height: 20),
-              Image.network('http://picsum.photos/250?image=10'), // Regular Network Image
+              Image.network('http://picsum.photos/250?image=10'),
             ],
           ),
         ),
