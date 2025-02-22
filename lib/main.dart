@@ -1,33 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 void main() {
-  runApp(const Lab06AdvancedUI());
+  runApp(const MyApp());
 }
 
-class Lab06AdvancedUI extends StatelessWidget {
-  const Lab06AdvancedUI({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lab06 Advanced UI',
       home: Scaffold(
-        appBar: AppBar(title: const Text('Lab06 Advanced UI')),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+        drawer: Drawer(
+          backgroundColor: Colors.red,
+          child: ListView(
             children: [
-              CachedNetworkImage(
-                imageUrl:
-                    'https://aaregistry.org/wp-content/uploads/2009/09/pele.jpg',
-                placeholder: (context, url) => CircularProgressIndicator(),
-                errorWidget: (context, url, error) => Icon(Icons.error),
-              ), // Cached Network Image
-              const SizedBox(height: 20),
-              Image.network('http://picsum.photos/250?image=10'),
+              DrawerHeader(
+                child: Row(
+                  children: [Icon(Icons.people_alt_rounded), Text("Contacts")],
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.phone),
+                title: Text("Your Device"),
+                trailing: Text("1"),
+              ),
+              ListTile(
+                leading: Icon(Icons.phone),
+                title: Text("Your Device"),
+                trailing: Text("2"),
+                onTap: () {},
+              ),
             ],
           ),
+        ),
+        appBar: AppBar(
+          title: const Text('AdvanceUI'),
+          backgroundColor: Colors.deepPurpleAccent,
+        ),
+        body: Center(child: Text('Tanvir')),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+            ),
+          ],
         ),
       ),
     );
