@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         drawer: Drawer(
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.lightGreenAccent,
           child: ListView(
             children: [
               DrawerHeader(
@@ -22,13 +22,13 @@ class MyApp extends StatelessWidget {
               ),
               ListTile(
                 leading: Icon(Icons.phone),
-                title: Text("Your Device"),
+                title: Text("CAll Obama"),
                 trailing: Text("1"),
               ),
               ListTile(
                 leading: Icon(Icons.phone),
-                title: Text("Your Device"),
-                trailing: Text("2"),
+                title: Text("CAll Hasina"),
+                trailing: Text("12"),
                 onTap: () {},
               ),
             ],
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         ),
         appBar: AppBar(
           title: const Text('AdvanceUI'),
-          backgroundColor: Colors.deepPurpleAccent,
+          backgroundColor: Colors.teal,
         ),
         body: Center(child: Text('Tanvir')),
         bottomNavigationBar: BottomNavigationBar(
